@@ -2,7 +2,6 @@ elpa
 auto-save-list
 *-cache/
 eshell/
-elpa
 *.elc
 url
 .cask/
