@@ -99,14 +99,10 @@
 
 
 ;; Change the buffer on the other window
-(defun cycle-other-window-forward () 
-  "cycle windows forward"
-  (interactive)
-  (switch-to-next-buffer (next-window)))
-
+(defun cycle-other-window-forward () (interactive)(switch-to-next-buffer (next-window)))
 (defun cycle-other-window-backwards () (interactive) (switch-to-prev-buffer (next-window)))
-(global-set-key [s-m] 'cycle-other-window-backwards)
-(global-set-key (kbd "<s-n>") 'cycle-other-window-forward)
+(global-set-key (kbd "s-m") 'cycle-other-window-backwards)
+(global-set-key (kbd "s-n") 'cycle-other-window-forward)
 
 
 ;; view full path names on system title bar
