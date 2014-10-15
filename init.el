@@ -1,4 +1,3 @@
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -14,9 +13,17 @@
  )
 
 ;; Set the font size
-(set-face-attribute 'default nil :height 130)
+;;(set-face-attribute 'default nil :height 130)
 
-;;
+
+;;(set-face-attribute 'region nil :background "#666")
+
+
+
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#3e4446")
+(set-face-foreground 'highlight nil)
+
 (tool-bar-mode -1)
 
 ;;; Faster buffer switching
@@ -156,3 +163,16 @@
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+
+;;Starting packages now instead of after reading this file
+;; this way we can install them from a list defined in this file
+(setq package-enable-at-startup nil)
+(package-initialize)
+
+;; This will install cider, a clojure IDE, if not installed.
+;; TODO: manually write a list of desired packages, and do a similar check for each off the package names
+;; Then I can saffelly remove the elpa folder
+
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
