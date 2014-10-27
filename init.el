@@ -15,14 +15,7 @@
 ;; Set the font size
 ;;(set-face-attribute 'default nil :height 130)
 
-
 ;;(set-face-attribute 'region nil :background "#666")
-
-
-
-;; (global-hl-line-mode 1)
-;; (set-face-background 'hl-line "#3e4446")
-;; (set-face-foreground 'highlight nil)
 
 (tool-bar-mode -1)
 
@@ -170,16 +163,10 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-;; This will install cider, a clojure IDE, if not installed.
-;; TODO: manually write a list of desired packages, and do a similar check for each off the package names
-;; Then I can saffelly remove the elpa folder
-
 (set 'my-packages '(auto-complete cider clojure-mode go-mode haskell-mode helm-ack helm-ag helm-ag-r helm-cmd-t helm-projectile helm iflipb php+-mode php-mode popup projectile pkg-info epl dash queue restclient reveal-in-finder s))
-
 
 ;; copied from
 ;;  http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name
-
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -187,6 +174,3 @@
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
-
-(unless (package-installed-p 'cider)
-  (package-install 'cider))
