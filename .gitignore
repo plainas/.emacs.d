@@ -8,3 +8,6 @@ url
 session.*
 tramp
 *~
+elpa/
+melpa/
+marmalade/
