@@ -163,7 +163,7 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(set 'my-packages '(auto-complete cider clojure-mode go-mode haskell-mode helm-ack helm-ag helm-ag-r helm-cmd-t helm-projectile helm iflipb php+-mode php-mode popup projectile pkg-info epl dash queue restclient reveal-in-finder s))
+(set 'my-packages '(auto-complete cider clojure-mode go-mode haskell-mode helm-ack helm-ag helm-ag-r helm-cmd-t helm-projectile helm iflipb php+-mode php-mode popup projectile pkg-info epl dash queue restclient reveal-in-finder s auto-complete))
 
 ;; copied from
 ;;  http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name
@@ -174,3 +174,8 @@
 (dolist (package my-packages)
   (unless (package-installed-p package)
     (package-install package)))
+
+;;TODO: this apparently doesn't do it, read here
+;; http://stackoverflow.com/questions/8095715/emacs-auto-complete-mode-at-startup
+(require 'auto-complete)
+(global-auto-complete-mode t)
